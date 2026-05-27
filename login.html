@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Eksklusif</title>
+    <!-- Mengambil font elegan dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset margin & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Latar belakang dengan gradasi gelap yang elegan */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #09090b, #18181b, #27272a);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* Kotak form dengan efek Glassmorphism (Kaca) */
+        .login-wrapper {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 50px 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Tipografi Judul (Font Serif) */
+        .login-wrapper h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #d4af37; /* Warna Emas Mewah */
+            letter-spacing: 3px;
+        }
+
+        /* Input Form */
+        .input-box {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1rem;
+            color: #fff;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-bottom: 1px solid #d4af37; /* Garis emas saat diklik */
+        }
+
+        /* Label dengan animasi floating */
+        .input-box label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -18px;
+            font-size: 0.8rem;
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        /* Opsi Tambahan (Ingat Saya & Lupa Password) */
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+        }
+        
+        /* Modifikasi Checkbox */
+        .options input[type="checkbox"] {
+            accent-color: #d4af37;
+        }
+
+        .options a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .options a:hover {
+            color: #f1cf5b;
+            text-decoration: underline;
+        }
+
+        /* Tombol Login */
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #d4af37, #aa8323);
+            border: none;
+            border-radius: 4px;
+            color: #121212;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(135deg, #f1cf5b, #cba232);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-wrapper">
+        <h2>Elegance</h2>
+        <form action="#">
+            <div class="input-box">
+                <!-- Atribut required digunakan agar label tetap di atas saat form terisi -->
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            
+            <div class="options">
+                <label><input type="checkbox"> Ingat saya</label>
+                <a href="#">Lupa sandi?</a>
+            </div>
+            
+            <button type="submit" class="btn-login">Masuk</button>
+        </form>
+    </div>
+
+</body>
+</html>
